@@ -6,7 +6,8 @@ import categoriesFromServer from './api/categories';
 import productsFromServer from './api/products';
 
 function getCategoryById(product) {
-  return categoriesFromServer.find(category => product.categoryId === category.id);
+  return categoriesFromServer
+    .find(category => product.categoryId === category.id);
 }
 
 function getUserById(category) {
@@ -38,7 +39,8 @@ export const App = () => {
       return setProductList(products);
     }
 
-    const filteredList = prod.filter(product => (selectedUser === product.user.name ? product.user.name : null));
+    const filteredList = prod.filter(product => (
+      selectedUser === product.user.name ? product.user.name : null));
 
     setProductList(filteredList);
 
@@ -183,7 +185,10 @@ export const App = () => {
 
                         <a href="#/">
                           <span className="icon">
-                            <i data-cy="SortIcon" className="fas fa-sort-down" />
+                            <i
+                              data-cy="SortIcon"
+                              className="fas fa-sort-down"
+                            />
                           </span>
                         </a>
                       </span>
